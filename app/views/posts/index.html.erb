@@ -1,0 +1,9 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<h3><%= link_to '새 글 쓰기', posts_new_path %></h3> <br>
+
+<% @posts.each do |p| %>
+    <%= p.title %>
+    <br>
+<% end %>

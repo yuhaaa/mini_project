@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   delete '/posts/:id'   =>   'posts#destroy'
 
   put    '/posts/:id'   =>   'posts#update'
+  
+  root 'posts#index'
 
 
 

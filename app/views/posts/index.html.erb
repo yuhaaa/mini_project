@@ -1,9 +1,48 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>벚나무숲</h1>
 
-<h3><%= link_to '새 글 쓰기', posts_new_path %></h3> <br>
+<div id=outer>
+<h3><%= link_to '새 글 쓰기', new_post_path %></h3> <br>
 
 <% @posts.each do |p| %>
-    <%= p.title %>
+<div id=inner>
+    <%=image_tag "sakura.jpg"%>
+    <%= p.title %> | <%=link_to '이 글 보기', post_path(p.id)%> | <%=link_to '수정하기', edit_post_path(p)%>
+    | <%= link_to '삭제 하기', p, method: :delete, data: { confirm: '정말 지우시겠습니까?' } %>
+    </div>
     <br>
 <% end %>
+
+<br>
+사랑
+<br>
+<%@posts_love.each do |p|%>
+<div id=inner>
+    <%= p.title %> | <%=link_to '이 글 보기', post_path(p.id)%> | <%=link_to '수정하기', edit_post_path(p)%>
+    | <%= link_to '삭제 하기', p, method: :delete, data: { confirm: '정말 지우시겠습니까?' } %>
+    </div>
+    <br>
+<% end %>
+
+<br>
+사는 얘기
+<br>
+<%@posts_life.each do |p|%>
+<div id=inner>
+    <%= p.title %> | <%=link_to '이 글 보기', post_path(p.id)%> | <%=link_to '수정하기', edit_post_path(p)%>
+    | <%= link_to '삭제 하기', p, method: :delete, data: { confirm: '정말 지우시겠습니까?' } %>
+    </div>
+    <br>
+<% end %>
+
+<br>
+저...진지합니다
+<br>
+<%@posts_serious.each do |p|%>
+<div id=inner>
+    <%= p.title %> | <%=link_to '이 글 보기', post_path(p.id)%> | <%=link_to '수정하기', edit_post_path(p)%>
+    | <%= link_to '삭제 하기', p, method: :delete, data: { confirm: '정말 지우시겠습니까?' } %>
+    </div>
+    <br>
+<% end %>
+
+</div>

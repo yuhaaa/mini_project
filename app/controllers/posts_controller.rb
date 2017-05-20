@@ -1,9 +1,14 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    @posts_love=@posts.where(category_id:1)
-    @posts_life=@posts.where(category_id:2)
-    @posts_serious=@posts.where(category_id:3)
+    @posts_free=@posts.where(category_id:1)
+    @posts_info=@posts.where(category_id:2)
+    @posts_question=@posts.where(category_id:3)
+    @posts_anonymous=@posts.where(category_id:4)
+    @posts_lost=@posts.where(category_id:5)
+    @posts_used=@posts.where(category_id:6)
+    @posts_notice=@posts.where(category_id:7)
+    @posts_evaluation=@posts.where(category_id:8)
     
   end
 

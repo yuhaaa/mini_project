@@ -10,6 +10,8 @@ class PostsController < ApplicationController
     @posts_notice=@posts.where(category_id:7)
     @posts_evaluation=@posts.where(category_id:8)
     
+    @posts = Post.search(params[:search])
+    
   end
 
   def new
